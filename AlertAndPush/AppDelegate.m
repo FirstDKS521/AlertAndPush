@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "DKSUUIDKeyChinaManager.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    NSLog(@"直接读取%@", [DKSUUIDKeyChinaManager readUUID]);
+    
+    NSString *deviceUUID = [[UIDevice currentDevice].identifierForVendor UUIDString];
+    NSLog(@"获取的值%@", deviceUUID);
+    [DKSUUIDKeyChinaManager saveUUID:deviceUUID];
+    
+    NSLog(@"获取后读取%@",[DKSUUIDKeyChinaManager readUUID]);
+    
     return YES;
 }
 

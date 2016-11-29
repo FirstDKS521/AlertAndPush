@@ -28,12 +28,6 @@
     self.navigationController.navigationBar.hidden = YES;
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    self.navigationController.navigationBar.hidden = YES;
-}
-
 - (IBAction)closeSelf:(id)sender {
     [self dismissViewControllerAnimated:NO completion:nil];
 }
